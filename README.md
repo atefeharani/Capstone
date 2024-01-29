@@ -27,6 +27,22 @@ The `locations_df` DataFrame contains information about locations. Here are the 
 This DataFrame is a fundamental part of the dataset, providing details about the hierarchical structure of locations.
 
 
+### Types DataFrame (types_df)
+
+The `types_df` DataFrame contains information about property types. Here are the details:
+
+- **Columns**:
+  1. `id` (int64): Unique identifier for each property type.
+  2. `groupName` (object): Name of the property type.
+
+- **Summary**:
+  - Total Entries: 15
+  - Non-Null Counts: All columns have 15 non-null entries.
+  - Data Types: `id` is of integer type, and `groupName` is of object type.
+
+This DataFrame provides insights into the different property types present in the dataset.
+
+
 
 
 # Cleaning dataste:
