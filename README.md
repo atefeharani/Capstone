@@ -76,7 +76,28 @@ This DataFrame serves as the foundation for analyzing and modeling real estate d
 
 
 
-# Cleaning dataste:
+# Data Cleaning:
+
+## Removing Unnamed Columns
+
+To enhance the cleanliness of the dataset, the `train_listings_df` DataFrame undergoes a process to eliminate unnecessary columns. These columns, labeled as 'Unnamed' columns, lack clear identification and do not contribute meaningfully to the analysis. The removal of these columns helps streamline the dataset.
+
+### Steps Taken:
+
+1. **Identification of Unnamed Columns:**
+   - A list, `unnamed_columns`, is created, consisting of columns containing the substring 'Unnamed.'
+
+2. **Dropping Unnamed Columns:**
+   - The identified 'Unnamed' columns are then dropped from the `train_listings_df` DataFrame using the `drop` function.
+
+```python
+unnamed_columns = [col for col in train_listings_df.columns if 'Unnamed' in col]
+train_listings_df = train_listings_df.drop(columns=unnamed_columns, axis=1)
+
+```
+
+
+
 ### trainListings.csv    
 - Addressed shiffted records in Excel
 
