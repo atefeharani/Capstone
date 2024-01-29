@@ -43,6 +43,37 @@ The `types_df` DataFrame contains information about property types. Here are the
 This DataFrame provides insights into the different property types present in the dataset.
 
 
+### Training Listings DataFrame (train_listings_df)
+
+The `train_listings_df` DataFrame is the primary dataset containing information about real estate listings. Here are the key details:
+
+- **Columns**:
+  1. `id` (float64): Unique identifier for each listing.
+  2. `sourceId` (float64): Identifier for the source of the listing.
+  3. `locationId` (float64): Identifier for the location of the listing.
+  4. `typeId` (float64): Identifier for the type of property.
+  5. `price` (float64): Price of the property.
+  6. `rooms` (float64): Number of rooms in the property.
+  7. `bedrooms` (float64): Number of bedrooms in the property.
+  8. `bathrooms` (float64): Number of bathrooms in the property.
+  9. `totalArea` (float64): Total area of the property.
+  10. `livingArea` (float64): Living area of the property.
+  11. `plotArea` (float64): Plot area of the property.
+  12. `terraceArea` (float64): Terrace area of the property.
+  13. `title` (object): Title of the listing.
+  14. `description` (object): Description of the listing.
+  15. `features` (object): Features associated with the listing.
+  16. `latitude` (float64): Latitude of the property location.
+  17. `longitude` (float64): Longitude of the property location.
+  18. `thumbnails` (object): Thumbnails associated with the listing.
+  19. `Unnamed: 18` to `Unnamed: 33`: Additional unnamed columns with mixed data types.
+
+- **Summary**:
+  - Total Entries: 83063
+  - Several columns contain missing values.
+
+This DataFrame serves as the foundation for analyzing and modeling real estate data.
+
 
 
 # Cleaning dataste:
