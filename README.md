@@ -7,7 +7,25 @@ The Real Estate Data Analysis Project is an exploration and analysis of real est
 ## Prerequisites
 - [Google Colab](https://colab.research.google.com/): For executing Python code in a collaborative environment.
 - [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel): For data exploration and manipulation.
-- [Python Libraries](#python-libraries): Install the required Python libraries using the following command:
+- [Python Libraries](#python-libraries): Install the required Python libraries: pandas, sklearn, 
+
+## Data Overview
+
+### Locations DataFrame (locations_df)
+
+The `locations_df` DataFrame contains information about locations. Here are the details:
+
+- **Columns**:
+  1. `id` (int64): Unique identifier for each location.
+  2. `parentId` (int64): Identifier of the parent location.
+
+- **Summary**:
+  - Total Entries: 826
+  - Non-Null Counts: All columns have 826 non-null entries.
+  - Data Types: Both columns are of integer type.
+
+This DataFrame is a fundamental part of the dataset, providing details about the hierarchical structure of locations.
+
 
 
 
