@@ -114,4 +114,16 @@ Addressing missing values is a crucial step to ensure the dataset's quality and 
 ### trainListings.csv    
 - Addressed shiffted records in Excel
 
-# Python 
+The following code  is used to merge the train_listings_df and test_listings_df DataFrames with the locations_df DataFrame based on the common column 'locationId'. The resulting DataFrames will have additional columns from locations_df for the corresponding location.
+
+```python
+train_listings_df = pd.merge(train_listings_df, locations_df, left_on='locationId', right_on='id', how='left')
+test_listings_df = pd.merge(test_listings_df, locations_df, left_on='locationId', right_on='id', how='left')
+```
+
+Then unnecessary column 'id_y' from both the train_listings_df and test_listings_df DataFrames are dropped after merging:
+
+```python
+train_listings_df.drop(['id_y'], axis=1, inplace=True)
+test_listings_df.drop(['id_y'], axis=1, inplace=True)
+```
