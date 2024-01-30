@@ -141,6 +141,12 @@ test_listings_df = pd.merge(test_listings_df, types_df, left_on='typeId', right_
 ```
 
 
+### **K-Nearest Neighbors Imputation**
+
+When dealing with a significant number of missing values in numerical features, it's essential to consider more advanced imputation techniques that can capture the underlying patterns in the data. Here is an advanced imputation strategies for numerical features named as K-Nearest Neighbors Imputation.
+
+In this method, for each sample with missing values, impute them based on the values of their k-nearest neighbors in the feature space.
+This method considers the entire feature space and can handle complex relationships between features.
 
 
 
