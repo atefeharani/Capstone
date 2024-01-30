@@ -160,7 +160,7 @@ train_listings_KNN_df[numerical_features] = knn_imputer.fit_transform(train_list
 test_listings_KNN_df[numerical_features] = knn_imputer.fit_transform(test_listings_KNN_df[numerical_features])
 ```
 
-I used iterative imputer as well. However, the performance  of KNN imputer was better. 
+I used iterative imputer as well. This imputer models each feature with missing values as a function of the other features and iteratively imputes missing values. However, the performance  of KNN imputer was better. 
 
 ```python
 from sklearn.experimental import enable_iterative_imputer
@@ -172,6 +172,8 @@ test_listings_II_df = test_listings_df.copy()
 train_listings_II_df[numerical_features] = iterative_imputer.fit_transform(train_listings_II_df[numerical_features])
 test_listings_II_df[numerical_features] = iterative_imputer.transform(test_listings_II_df[numerical_features])
 ```
+
+
 
 ### trainListings.csv    
 - Addressed shiffted records in Excel
