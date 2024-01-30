@@ -143,12 +143,22 @@ test_listings_df = pd.merge(test_listings_df, types_df, left_on='typeId', right_
 
 ### **K-Nearest Neighbors Imputation**
 
-When dealing with a significant number of missing values in numerical features, it's essential to consider more advanced imputation techniques that can capture the underlying patterns in the data. Here is an advanced imputation strategies for numerical features named as K-Nearest Neighbors Imputation.
+When dealing with a significant number of missing values in numerical features, it's essential to consider more advanced imputation techniques that can capture the underlying patterns in the data. Here is an advanced imputation strategy for numerical features named as K-Nearest Neighbors Imputation.
 
 In this method, for each sample with missing values, impute them based on the values of their k-nearest neighbors in the feature space.
-This method considers the entire feature space and can handle complex relationships between features.
+This method considers the entire feature space and can handle complex relationships between features. The KNN-based imputation approach offers a data-driven solution to handle missing numerical values, contributing to a more robust and informative dataset for downstream tasks such as regression analysis or machine learning model training. Adjusting the parameter k allows flexibility in the imputation process, accommodating different scenarios and dataset characteristics.
 
 
+```python
+from sklearn.impute import KNNImputer
+
+numerical_features = ['price', 'rooms', 'bedrooms', 'bathrooms', 'totalArea', 'livingArea', 'plotArea', 'terraceArea', 'latitude', 'longitude']
+knn_imputer = KNNImputer()
+train_listings_KNN_df = train_listings_df.copy()
+test_listings_KNN_df = test_listings_df.copy()
+train_listings_KNN_df[numerical_features] = knn_imputer.fit_transform(train_listings_KNN_df[numerical_features])
+test_listings_KNN_df[numerical_features] = knn_imputer.fit_transform(test_listings_KNN_df[numerical_features])
+```
 
 ### trainListings.csv    
 - Addressed shiffted records in Excel
