@@ -134,7 +134,11 @@ test_listings_df.rename(columns={'id_x': 'listing_id', 'parentId': 'area_parent_
 ```
 
 
-
+To merge the train_listings_df and test_listings_df DataFrames with types_df  based on the matching 'typeId' and 'id', the following codes are used:
+```python
+train_listings_df = pd.merge(train_listings_df, types_df, left_on='typeId', right_on='id', how='left')
+test_listings_df = pd.merge(test_listings_df, types_df, left_on='typeId', right_on='id', how='left')
+```
 
 
 
