@@ -99,16 +99,14 @@ train_listings_df = train_listings_df.drop(columns=unnamed_columns, axis=1)
 
 ## Missing Values
 
-Addressing missing values is a crucial step to ensure the dataset's quality and reliability. In the `train_listings_df` DataFrame, various columns exhibit differing amounts of missing data. Below shows the missing values:
+Addressing missing values is a crucial step to ensure the dataset's quality and reliability. In the `train_listings_df` and test_listings_df DataFrames, various columns exhibit differing amounts of missing data. Below shows the missing values:
 
 ### Identification of Missing Values:
 
 ![image](https://github.com/atefeharani/Capstone/assets/67924193/3ec352b0-e14b-4856-87e2-e198020691a7)
 
 
-
-### Result:
-By systematically addressing missing values, the dataset becomes more robust and ready for subsequent analysis and modeling.
+![image](https://github.com/atefeharani/Capstone/assets/67924193/17aec03c-908b-407d-a8f7-64348a18753c)
 
 
 
