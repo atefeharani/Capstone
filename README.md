@@ -194,16 +194,39 @@ X_test = X_test.reset_index(drop=True)
 y_test = y_test.reset_index(drop=True)
 ```
 
-I chose the following categorical features:
+I chose the following categorical features and then I used a one-hot encoding approach to encode those features. Encoding Categorical Features involves transforming categorical variables (features with discrete and unordered values) into a numerical format that can be used for machine learning models. The pd.get_dummies function in pandas is a common way to perform one-hot encoding, which creates binary columns for each category and represents their presence as 1 and absence as 0.
+The following code is used to concatenate the training and test datasets, apply one-hot encoding to the combined dataset, and then split it back into the encoded training and test sets.
+
+
+
 ```python
-# from sklearn.impute import KNNImputer
-# from sklearn.preprocessing import StandardScaler
-
-# # Identify numerical and categorical columns
-# # numerical_features = ['rooms', 'bedrooms', 'bathrooms', 'totalArea', 'plotArea', 'terraceArea', 'latitude', 'longitude']
 categorical_features = ['area_parent_id', 'estate_group']
+combined_data = pd.concat([X_train, X_test], axis=0)
+combined_data_encoded = pd.get_dummies(combined_data, columns=categorical_features)
 
+X_train_encoded = combined_data_encoded.iloc[:len(X_train)]
+X_test_encoded = combined_data_encoded.iloc[len(X_train):]
+```
 
+The following code demonstrates the standardization (scaling) of numerical features using the StandardScaler from scikit-learn.
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+scaled_features = ['price', 'rooms', 'bedrooms', 'bathrooms',  'livingArea', 'plotArea', 'terraceArea', 'latitude', 'longitude']
+
+X_train_encoded[scaled_features]= scaler.fit_transform(X_train_encoded[scaled_features])
+X_test_encoded[scaled_features]= scaler.transform(X_test_encoded[scaled_features])
+```
+
+ The following code shows the training of a linear regression model using scikit-learn.
+ ```python
+# Model Training
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X_train_encoded, y_train)
 ```
 
 ### trainListings.csv    
