@@ -229,5 +229,18 @@ model = LinearRegression()
 model.fit(X_train_encoded, y_train)
 ```
 
+The following code  is used to make predictions on the test set using the trained linear regression model.
+```python
+y_pred = model.predict(X_test_encoded) 
+```
+
+Then, the following code is used to calculate the Mean Squared Error (MSE) as a measure of the model's performance on the test set.
+
+```python
+from sklearn.metrics import mean_squared_error
+mse = mean_squared_error(y_test, y_pred)
+
+```
+
 ### trainListings.csv    
 - Addressed shiffted records in Excel
