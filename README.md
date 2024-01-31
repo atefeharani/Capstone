@@ -176,11 +176,11 @@ test_listings_II_df[numerical_features] = iterative_imputer.transform(test_listi
 The proportion of 'nan' values in the 'estate_group' column is very small (0.00014%). Given this, it's reasonable to drop the rows with 'nan' values. Here's how to do it:
 
 ```python
-nan_indices = X_train[X_train['estate_group'] == 'nan'].index
-X_train = X_train.drop(index=nan_indices)
-y_train = y_train.drop(index=nan_indices)
-X_train = X_train.reset_index(drop=True)
-y_train = y_train.reset_index(drop=True)
+nan_indices_train = X_train[X_train['estate_group'].isna()].index
+nan_indices_train
+X_train = X_train.drop(index=nan_indices_train)
+y_train = y_train.drop(nan_indices_train)
+nan_indices_test = X_test[X_test['estate_group'].isna()].index
 ```
 
 
