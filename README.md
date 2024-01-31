@@ -183,6 +183,28 @@ y_train = y_train.drop(nan_indices_train)
 nan_indices_test = X_test[X_test['estate_group'].isna()].index
 ```
 
+```python
+nan_indices_test = X_test[X_test['area_parent_id'].isna()].index
+
+X_test = X_test.drop(index=nan_indices_test)
+y_test = y_test.drop(index=nan_indices_test)
+
+# Reset index after dropping rows
+X_test = X_test.reset_index(drop=True)
+y_test = y_test.reset_index(drop=True)
+```
+
+I chose the following categorical features:
+```python
+# from sklearn.impute import KNNImputer
+# from sklearn.preprocessing import StandardScaler
+
+# # Identify numerical and categorical columns
+# # numerical_features = ['rooms', 'bedrooms', 'bathrooms', 'totalArea', 'plotArea', 'terraceArea', 'latitude', 'longitude']
+categorical_features = ['area_parent_id', 'estate_group']
+
+
+```
 
 ### trainListings.csv    
 - Addressed shiffted records in Excel
