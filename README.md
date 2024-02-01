@@ -74,6 +74,18 @@ The `train_listings_df` DataFrame is the primary dataset containing information 
 
 This DataFrame serves as the foundation for analyzing and modeling real estate data.
 
+# Distribution of different estate groups
+
+![image](https://github.com/atefeharani/Capstone/assets/67924193/a7a4205f-0ac6-491e-8d9d-a7d9aac8ec8e)
+
+# Correlation Heatmap
+
+![image](https://github.com/atefeharani/Capstone/assets/67924193/d7204467-9b98-4ea5-9936-2bab96337084)
+
+# Scatter Plot of Living Area vs. Price
+
+![image](https://github.com/atefeharani/Capstone/assets/67924193/60f8fe98-919d-440c-a57c-69c92b40eb1a)
+
 
 
 # Data Cleaning:
