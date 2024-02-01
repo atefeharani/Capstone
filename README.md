@@ -241,6 +241,24 @@ from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_test, y_pred)
 
 ```
+# Challenges
+- Missing value
+
+- Feature Selection
+
+- Categorical Data
+
+- Model Selection
+
+
+
+# Future Goals
+
+- Advanced Modeling
+- Feature Engineering 
+- Data Enrichment 
+- Robust Data Cleaning
+
 
 ### trainListings.csv    
 - Addressed shiffted records in Excel
